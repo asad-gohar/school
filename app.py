@@ -389,17 +389,14 @@ def MyAdmin():
         userpic = g.AdminUser
         userpic = userpic.split("@")
         userpic = userpic[0]
-        # movie = Movie.query.filter_by(movie_date=datetime.datetime.now().strftime('%m-%d-%Y')).all()
         admin = Admin.query.filter_by(email=g.AdminUser).first()
-        #
-        # showtime = Show.query.filter_by(id=1).first()
-        # notify = Notification.query.filter_by(id=1).first()
-        if admin.img is None:
-            src = "https://img.icons8.com/metro/100/000000/user-male-circle.png"
-            return render_template("Myadmin.html", admin=admin, src=src, name=userpic)
+ 
+#         if admin.img is None:
+#             src = "https://img.icons8.com/metro/100/000000/user-male-circle.png"
+#             return render_template("Myadmin.html", admin=admin, src=src, name=userpic)
 
-        scr = "../static/profile_pic/" + userpic + "/" + admin.img
-        return render_template("Myadmin.html", admin=admin, src=scr, name=userpic)
+        
+        return render_template("Myadmin.html", admin=admin, src="aa", name=userpic)
     return redirect(url_for("login"))
 
 
