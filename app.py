@@ -389,16 +389,15 @@ def MyAdmin():
 #         userpic = g.AdminUser
 #         userpic = userpic.split("@")
 #         userpic = userpic[0]
-#         admin = Admin.query.filter_by(email=g.AdminUser).first()
+        admin = Admin.query.filter_by(email=g.AdminUser).first()
  
 # #         if admin.img is None:
 # #             src = "https://img.icons8.com/metro/100/000000/user-male-circle.png"
 # #             return render_template("Myadmin.html", admin=admin, src=src, name=userpic)
 
         
-#         return render_template("Myadmin.html", admin=admin, src="aa", name=userpic)
-          return "a"
-    return redirect(url_for("login"))
+        return render_template("Myadmin.html", admin=admin, src="aa", name="asad")
+      return redirect(url_for("login"))
 
 
 @myApp.route('/post', methods=['GET', 'POST'])
