@@ -396,7 +396,8 @@ def MyAdmin():
 # #             return render_template("Myadmin.html", admin=admin, src=src, name=userpic)
 
         
-        return render_template("Myadmin.html", admin=admin, src="aa", name=userpic)
+#         return render_template("Myadmin.html", admin=admin, src="aa", name=userpic)
+          return "a"
     return redirect(url_for("login"))
 
 
