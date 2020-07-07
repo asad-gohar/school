@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolZeal.com - Nigerian Number One Educational Forum For All |News</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/allf500.css">
+    <link rel="stylesheet" href="../static/css/animated.css">
+    <link rel="stylesheet" href="../static/fontawesome-free-5.12.1-web/css/all.css">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/news.css">
+    <link rel="stylesheet" href="../static/css/aos.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/login1.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/log_util.css">
+    <script src="../static/fontawesome-free-5.12.1-web/js/all.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <style>
+        #imgs {
+            min-height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        img {
+            border-radius: 50px;
+        }
+        
+        .Profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        
+        .photo {
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            float: left;
+            z-index: 5;
+            margin-right: 11px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            box-shadow: 0 16px 38px -12px rgba(0, 0, 0, .56), 0 4px 25px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+            background-color: transparent !important;
+        }
+    </style>
+</head>
+
+
+<body style="background-color: #F7F7F7;">
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="#"><img src="../static/images/Schoolzeal.png" class="img-fluid" height="200px" width="150px" alt="" srcset=""></a>
+        <ul class="navbar-nav ml-auto">
+            <div class="row m-2">
+                <div class="col-4 mt-1">
+                    <p>
+                        <a class="btn" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
+
+                    </p>
+
+                </div>
+                <div class="col-8 ">
+                    <li class="nav-item {{Logout}}">
+                        <a class="nav-link btn btn-outline-success " href="/login">login </a>
+                    </li>
+                    <li class="nav-item  {{Login}}">
+                        <a href="/profile">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="{{scr}}" class="photo" title="{{user}}" alt="">
+
+                                </div>
+
+                            </div>
+
+
+
+                        </a>
+                    </li>
+
+                </div>
+            </div>
+
+
+
+        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link" data-aos="zoom-in" data-aos-duration="3000" style="font-size: 20px;">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item " data-aos="zoom-in" data-aos-duration="3000">
+                    <a href="/profile" class="nav-link " style="font-size: 20px;">
+                        Store
+                    </a>
+
+                </li>
+                <li class="nav-item " data-aos="zoom-in" data-aos-duration="3000">
+                    <a href="/latest_news" class="nav-link " style=" font-size: 20px;"> Latest News
+                    </a>
+
+                </li>
+
+                <li class="nav-item " data-aos="zoom-in" data-aos-duration="3000">
+                    <a href="/profile" class="nav-link " style="font-size: 20px;">Exam's
+                    </a>
+
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <form method="POST" action="/search" accept-charset="UTF-8">
+                <div class="input-group">
+                    <input class="form-control" placeholder="Search Post here..." name="search_string" type="text">
+                    <span class="input-group-btn">
+                <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+            </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var socket = io.connect('http://127.0.0.1:5000/');
+
+            socket.on('connect', function() {
+                // socket.send('User has connected!');
+            });
+
+            socket.on('message', function(msg) {
+
+
+                alert("changed()")
+                fetch('/comment').then(function(response) {
+
+                    response.json().then(function(data) {
+
+
+                        for (var bhn of data.all_data) {
+                            console.log(bhn.message)
+                            if (bhn.pic == null) {
+                                pic = '<img src="https://img.icons8.com/metro/100/000000/user-male-circle.png/"  height="50px" width="50px">'
+
+                            } else {
+                                pic = '<img src = "static/profile_pic/' + bhn.email + '/' + bhn.pic + '"' + 'height="50px" width="50px">'
+                            }
+
+
+                            $("#messages").append('<div class="row mb-3"> <div class = "col-lg-1 col-md-2" ><div class = "user_avatar">' + pic +
+
+                                '</div> </div> <div class = "col-lg-11 col-md-10 mt-3">' +
+                                '<div class = "comment_body">' +
+                                '<p>' + bhn.message + '</p> </div> </div></div>'
+                            );
+                        }
+
+                        // changeTime(data)
+
+
+                    });
+
+                });
+
+
+
+
+            });
+
+
+            $('#sendbutton').on('click', function() {
+
+                socket.send($('#myMessage').val(), $('#post_id').text(), $('#user').text(), $('#img').text(), $('#email').text());
+                $('#myMessage').val('');
+            });
+
+        });
+    </script>
+    <div id="img" class="d-none">{{img}}</div>
+    <div id="email" class="d-none">{{email}}</div>
+    <div id="post_id" class="d-none">{{news_id}}</div>
+    <div id="user" class="d-none">{{user}}</div>
+
+    <div class="container" style="background-color: white;">
+
+
+
+        <div class="text-center">
+            <h1 class=" pt-3">{{news.Name}}</h1>
+
+            <div class="mt-2">
+                <img src="../static/Post/{{news.img}}" class="img-thumbnail" alt="">
+
+            </div>
+
+            <div class="container mt-3">
+
+                <h6>{{news.Description}}</h6>
+            </div>
+
+
+        </div>
+        <div class="container-fluid">
+            <div class="comment_block  ml-5">
+
+
+
+                <h1>Comment</h1>
+
+                <!-- new comment -->
+                {%for m in messsage %}
+                <div class="new_comment">
+
+                    <!-- build comment -->
+
+
+                    <ul class="user_comment">
+
+                        <!-- current #{user} avatar -->
+                        <div class="row mb-3">
+                            <div class="col-lg-1 col-md-2">
+                                <div class="user_avatar">
+
+                                    {%if m.img ==None %}
+                                    <img src="https://img.icons8.com/metro/100/000000/user-male-circle.png/" title="{{m.user}}" height="50px" width="50px"> {% else %}
+                                    <img src="../static/profile_pic/{{m.email}}/{{ m.img}}" title="{{m.user}}" height="50px" width="50px"> {% endif %}
+
+                                </div>
+                            </div>
+                            <div class="col-lg-11 col-md-10 mt-3">
+                                <div class="comment_body">
+                                    <p>
+                                        {{m.message}}
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- the comment body -->
+
+
+                        <!-- comments toolbar -->
+
+
+                        <!-- start user replies -->
+
+
+                        <!-- start user replies -->
+
+
+                    </ul>
+
+                </div>
+                {% endfor %}
+
+                <div id="messages">
+
+                </div>
+
+                <!-- used by #{user} to create a new comment -->
+                <div class="create_new_comment">
+
+                    <!-- current #{user} avatar -->
+                    <div class="row">
+                        <div class="col-lg-1  ">
+                            <div class="user_avatar mb-3 mt-3">
+                                <img src="{{scr}}" height="50px" width="50px">
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="input_comment">
+                                <textarea id="myMessage" name="w3review" class="form-control mb-2" rows="4" cols="50" required></textarea>
+                                <button class="btn btn-success float-right mb-2" id="sendbutton" type="submit">Comment</button>
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- the input field -->
+                    <!-- <div class="input_comment">
+                                <input type="text" id="myMessage" class="form-control" placeholder="Join the conversation..">
+                
+                
+                                <button class="btn btn-success text-center mt-2 mb-3" type="submit" onclick="changed()" id="sendbutton">Comment</button>
+                
+                            </div> -->
+
+                </div>
+
+                <!-- new comment -->
+
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <footer id="footer" class="mt-5 bg-dark" data-aos="fade-up" data-aos-duration="3000">
+        <div class="footer_main">
+            <div class="container">
+                <div class="row text-md-left text-sm-center text-center">
+                    <div class="col-md-4 order-3 order-md-1">
+                        <div class="footer-widget">
+                            <h2 class="footer_main--column_title">Welcome to SchoolZeal</h2>
+                            <p>Yes! We are Nigeria's No1 Students' and Educational Resource Website.</p>
+                            <img data-src="https://myschool.ng/img/myschool_footer_logo.png" class="lazy" />
+                            <div class="mt-2">
+                                Join us on SchoolZeal<br>
+                                <a href="/signup" class="btn btn-success btn-sm mt-1">REGISTER NOW!</a>
+                            </div>
+                            <p>
+                                <ul class="link-list">
+                                    <li class="text-md-left text-sm-center text-center"><a href="https://myschool.ng/privacy-policy">Privacy Policy</a></li>
+                                    <li class="text-md-left text-sm-center text-center"><a href="https://myschool.ng/terms-of-use">Terms of Use</a></li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 order-2 order-md-3 ">
+                        <div class="footer-widget">
+                            <h2 class="footer_main--column_title">Quick Links</h2>
+                            <ul class="link-list">
+                                <li class="text-md-left text-sm-center text-center"><a href="/" class="">Home Page</a></li>
+                                <li class="text-md-left text-sm-center text-center"><a href=""> Store</a></li>
+                                <li class="text-md-left text-sm-center text-center"><a href="/latest_news">Latest News</a></li>
+                                <li class="text-md-left text-sm-center text-center"><a href="mailto:Support@schoolzeal.com">Contact Us</a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 order-4 order-md-4">
+                        <div class="footer-widget info-widget">
+                            <h2 class="footer_main--column_title">Connect with us</h2>
+
+
+
+                            <div>
+                                Call Hours: 9am - 5pm (Mon - Fri)<br>
+                                <i class="fa fa-phone mt-2"></i> &nbsp;+234-8132200778<br>
+                                <i class="fa fa-envelope mt-2"></i> &nbsp;Support@schoolzeal.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="copyright-text text-center">
+                    Copyright &copy; 2020 SchoolZeal Services. All Names, Acronyms and Trademarks displayed on this website are those of their respective owners.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        setTimeout(function() {
+            $('.preloader').fadeToggle();
+
+        }, 1500);
+        $(document).ready(function() {
+            AOS.init({
+                    duration: 3000,
+                }
+
+            );
+
+
+        });
+    </script>
+    <script src="../static/bootstrap/js/bootstrap.js"></script>
+    <script src="../static/js/popper.js"></script>
+    <script src="../static/js/aos.js"></script>
+</body>
+
+</html>
+
+
+<!-- <html>
+
+<head>
+    <title>Chat Room</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var socket = io.connect('http://127.0.0.1:5000/');
+
+            socket.on('connect', function() {
+                socket.send('User has connected!');
+            });
+
+            socket.on('message', function(msg) {
+                $("#messages").append('<li>' + msg + '</li>');
+                console.log('Received message');
+            });
+
+            $('#sendbutton').on('click', function() {
+                socket.send($('#myMessage').val());
+                $('#myMessage').val('');
+            });
+
+        });
+    </script>
+    <ul id="messages">
+        {%for m in messsage %}
+        <li>{{m.message}}</li>
+        {% endfor %}
+    </ul>
+    <input type="text" id="myMessage">
+    <button id="sendbutton">Send</button>
+</body>
+
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/animated.css">
+    <link rel="stylesheet" href="../static/fontawesome-free-5.12.1-web/css/all.css">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/news.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/login1.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/log_util.css">
+    <script src="../static/fontawesome-free-5.12.1-web/js/all.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <style>
+        #imgs {
+            min-height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="imgs" style="background-image: url('../static/Post/{{news.img}}');"></div>
+        <div class="container">
+            <h1>{{news.Name}}</h1>
+            <h6>{{news.Description}}</h6>
+            <div class="mt-4">
+                <ul id="messages">
+                    {%for m in messsage %}
+                    <li>{{m.message}}</li>
+                    {% endfor %}
+                </ul>
+
+                <div class="row">
+                    <div class="col-10">
+                        <input type="text" id="myMessage" class="form-control">
+                    </div>
+                    <div class="col-2">
+
+                        <button type="submit" id="sendbutton">Comment</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/popper.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#signup-form").validate();
+
+            var socket = io.connect('http://127.0.0.1:5000/News');
+
+            socket.on('connect', function() {
+                // socket.send('User has connected!');
+            });
+
+            socket.on('message', function(msg) {
+                $("#messages").append('<li>' + msg + '</li>');
+                console.log('Received message');
+            });
+
+            $('#sendbutton').on('click', function() {
+                socket.send($('#myMessage').val());
+                $('#myMessage').val('');
+            });
+
+        });
+    </script>
+    <script>
+        setTimeout(function() {
+            $('.preloader').fadeToggle();
+
+        }, 1500);
+        $(document).ready(function() {
+
+
+
+        });
+    </script>
+
+</body>
+
+</html> -->

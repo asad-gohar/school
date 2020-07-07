@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/animated.css">
+    <link rel="stylesheet" href="../static/fontawesome-free-5.12.1-web/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>SchoolZeal.com - Nigerian Number One Educational Forum For All | MyAdmin</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/aos.css">
+    <script src="../static/fontawesome-free-5.12.1-web/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../static/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/login1.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/log_util.css">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="../static/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        .loader {
+            display: none;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+        
+        .loading {
+            border: 2px solid #ccc;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border-top-color: #1ecd97;
+            border-left-color: #1ecd97;
+            animation: spin 1s infinite ease-in;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="admin">
+
+
+        <div class="bd-example bd-example-tabs ">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-mattBlackLight fixed-top">
+                <button class="navbar-toggler sideMenuToggler" type="button">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+
+                <a class="navbar-brand text-dark" href="#">Schoolzeal</a>
+
+            </nav>
+
+            <div class="wrapper d-flex row container-fluid">
+                <div class="d-md-none d-lg-block d-none">
+                    <div class="sideMenu bg-mattBlackLight" id="show">
+                        <div class="sidebar">
+                            <ul class=" navbar-nav nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <li class="nav-item bg-transparent">
+                                    <a class="nav-link  mb-1 p-3 image active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <img src="{{src}}" class="photo " alt="">
+                                                <span class="text ">{{name}}</span>
+                                            </div>
+                                            <div class="col-6 d-none">
+
+
+                                            </div>
+                                        </div>
+
+
+
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link px-2" id="img-tab" data-toggle="pill" href="#store" role="tab" aria-controls="store" aria-selected="true">
+                                        <i class="material-icons icon">
+                                            library_add
+                                        </i>
+                                        <span class="text">Add Items</span>
+                                    </a>
+
+
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link px-2 {{link_movie_tab}}" id="img-tab" data-toggle="pill" href="#img" role="tab" aria-controls="img" aria-selected="true">
+                                        <i class="material-icons icon"> library_books </i><span class="text">Create
+                                            Post</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link px-2" id="Exam-tab" data-toggle="pill" href="#Exam" role="tab" aria-controls="img" aria-selected="true">
+                                        <i class="material-icons icon"> content_paste </i><span class="text">Exam's
+                                            </span></a>
+                                </li>
+
+
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link px-2 {{link_setting}}" id="setting-tab" data-toggle="pill" href="#setting" role="tab" aria-controls="img" aria-selected="true">
+                                        <i class="material-icons icon"> settings </i><span class="text">settings
+                                        </span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/logout">
+                                        <div class="nav-link px-2 " style="cursor: pointer;">
+
+                                            <i class="material-icons icon"> https </i><span class="text">logout
+                                            
+                                        </span></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <div style="cursor: pointer;" class="nav-link px-2 sideMenuToggler">
+                                        <i class="material-icons icon expandView ">
+                                            view_list
+                                        </i>
+                                        <span class="text">Resize</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="d-lg-none d-xl-none d-md-block d-block">
+                    <div class="wrapper d-flex">
+                        <div class="sideMenu bg-mattBlackLight" id="show">
+                            <div class="sidebar">
+                                <ul class=" navbar-nav nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <li class="nav-item bg-transparent active sideMenuToggler">
+                                        <a class="nav-link  mb-1 p-3 image " id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <img src="{{src}}" class="photo " alt="">
+                                                    <span class="text ">{{name}}</span>
+                                                </div>
+                                                <div class="col-6 d-none">
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item sideMenuToggler">
+                                        <a class="nav-link px-2" id="store-tab" data-toggle="pill" href="#store" role="tab" aria-controls="store" aria-selected="true">
+                                            <i class="material-icons icon">
+                                                library_add
+                                            </i>
+                                            <span class="text">Add Items</span>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="nav-item sideMenuToggler">
+                                        <a class="nav-link px-2 " id="img-tab" data-toggle="pill" href="#img" role="tab" aria-controls="img" aria-selected="true">
+                                            <i class="material-icons icon"> library_books </i><span class="text">Create
+                                            Post</span></a>
+                                    </li>
+                                    <li class="nav-item sideMenuToggler">
+                                        <a class="nav-link px-2 " id="img-tab" data-toggle="pill" href="#Exam" role="tab" aria-controls="img" aria-selected="true">
+                                            <i class="material-icons icon"> content_paste </i><span class="text">Exam's
+                                                </span></a>
+                                    </li>
+
+
+
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class=" mt-4 content  ">
+
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane active ml-5" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <div class="pt-5">
+                                <div class="text-center">
+                                    <img id="Admin" src="{{src}}" class="Profile-img img-fluid" alt="">
+                                </div>
+                                <div class="container-fluid">
+                                    <form action="/update" id="update-form" method="post" enctype="multipart/form-data" class="login100-form  pb-5">
+
+                                        <div class="wrap-input100 ">
+                                            <label for="password" class="label">CURRENT PASSWORD<span> * </span> </label>
+                                            <input class="input100" type="text" id="password" value='{{admin["password"]}}' name="password" required readonly>
+                                            <span class="focus-input100"></span>
+
+                                        </div>
+                                        <div class="wrap-input100 ">
+                                            <label for="confirm" class="label">NEW PASSWORD<span> * </span> </label>
+                                            <input class="input100" id="confirm" type="password" name="confirm" required>
+                                            <span class="focus-input100"></span>
+
+                                        </div>
+
+
+                                        <div class="wrap-input100 ">
+
+                                            <label for="form-photo" class="label"> PROFILE PIC<span> * </span> </label>
+                                            <input type="file" accept="image/*" name="photo" id="form-photo" class="form-control bg-transparent input100" value='{{admin["img"]}}' onchange="readURL(this)">
+                                            <span class="focus-input100 "></span>
+
+                                        </div>
+
+
+
+                                        <div class="container">
+                                            <li class="header-button text-center ml-2 animated bounceInUp">
+                                                <input type="submit" value="Update" class="abc " name="join us">
+                                            </li>
+                                        </div>
+                                    </form>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="tab-pane ml-5" id="store" role="tabpanel" aria-labelledby="store-tab">
+                            <div class="row">
+                                <div class="col-md-6 d-md-block d-none" id="bg-store"></div>
+                                <div class="col-md-6 center pt-5">
+                                    <form action="/store_item" method="post" enctype="multipart/form-data">
+                                        <div class="">
+                                            <p>
+                                                <label for="name" class=" label "> Name <span> * </span>
+                                                <input class="input text-dark" id="name" name="name" type="text"   required autocomplete="off">
+    
+                                            </p>
+    
+    
+                                        </div>
+                                        <div class="mt-2">
+                                            <label for="form-file" class=" label "> file <span> *</span>  
+                                            <input type="file" accept="" name="file" id="form-file" class="form-control bg-transparent input text-dark" required>
+                                         
+    
+    
+    
+                                        </div>
+
+                                        <div class="mt-2">
+                                          
+                                                <div class="form-group">
+                                                    <label for="form-file" class=" label "> Category <span> *</span>  
+                                                    <select name="Category" class="form-control" id="exampleFormControlSelect1" required>
+                                                        <option value="">Category</option>
+                                                      <option value="Stories">Stories</option>
+                                                      <option value="Novel">Novel</option>
+                                                      <option value="Text books">Text books</option>
+                                                      <option value="Softwares">Softwares</option>
+                                                  
+                                                    </select>
+                                                  </div>
+                                         
+    
+    
+    
+                                        </div>
+
+                                        <div class="">
+                                            <p>
+                                                <label for="price" class=" label "> price <span> * </span>
+                                                <input class="input text-dark" id="price" name="price" type="text"  required autocomplete="off">
+    
+                                            </p>
+    
+    
+                                        </div>
+    
+                                        <div class="mt-2">
+                                            <label for="item-photo" class=" label ">Picture<span> *</span>  
+                                            <input type="file" accept="image/*" name="item" id="item-photo" class="form-control bg-transparent input" onchange="store(this);" required>
+                                            <img id="store-pic" src="http://placehold.it/180" class="mt-5 movie-pic img-fluid" alt="your image" />
+    
+    
+    
+                                        </div>
+                                        <div class="error  mb-3 mt-3" style="color: red;">
+
+                                        </div>
+                                        <div class="container">
+                                                <li class="header-button text-center ml-2 animated float-right bounceInUp">
+                                                    <input type="submit" value="submit" class="abc " >
+                                                </li>
+                                            </div>
+
+                                    </form>
+                                  
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane {{movie_tab}} ml-5" id="img" role="tabpanel" aria-labelledby="img-tab">
+                            <form id="regForm" action="/post" method="POST" class="login100-form validate-form" enctype=multipart/form-data>
+                                <style>
+                                    .input {
+                                        padding: 10px;
+                                        width: 100%;
+                                        font-size: 16px;
+                                        font-family: "Open Sans", sans-serif;
+                                        border: none;
+                                        border-bottom: 1px solid white;
+                                        outline: none;
+                                        color: #bbbbbb;
+                                        background-color: transparent;
+                                    }
+                                    
+                                    .bor {
+                                        border: none;
+                                    }
+                                </style>
+                                <!-- One "tab" for each step in the form: -->
+                                <div class="tab firts-tab">
+                                    <div class="row mt-5">
+                                        <div class="col-md-6 d-md-block d-none" id="bg-img"></div>
+                                        <div class="col-md-6 center">
+                                            <div class="" data-validate="Enter username">
+                                                <p>
+                                                    <label for="trailer" class=" label "> Name <span> * </span>
+                                                    <input class="input " id="name" name="name" type="text"  required autocomplete="off">
+
+                                                </p>
+
+
+                                            </div>
+
+
+                                            <div class="mt-2">
+                                                <label for="trailer" class=" label ">Picture (255*357)  <span> *</span>   <a href="https://www.countingcharacters.com/image-resizer-online#sectionbg" target="_blank"> Get that size</a>
+                                                <input type="file" accept="image/*" name="photo" id="form-photo" class="form-control bg-transparent input" onchange="ReadURL(this);" required>
+                                                <img id="blah" src="http://placehold.it/180" class="mt-5 movie-pic img-fluid" alt="your image" />
+
+
+
+                                            </div>
+                                            <div class="error  mb-3 mt-3" style="color: red;">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="tab  firts-tab ">
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 d-md-block d-none" id="video"></div>
+                                        <div class="col-md-6">
+
+                                  
+
+                                            <div class="mb-4">
+                                                <p>
+
+                                                    <label for="trailer" class=" label "> trailer Link <span> * </span>
+                                                    </label>
+                                                <input class="bg-transparent input text-white" onclick="is_url()" id="trailer" name="trailer" type="text" required autocomplete="off">
+
+                                                <div id="link_error" style="color: red;"></div>
+                                            </p>
+
+
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input">
+
+                                            <label for="movie_dispaly" class="label">Add Picture (1080p to get better result) <span> * </span> </label>
+                                            <input type="file" accept="image/*" name="movie_dispaly" id="movie_dispaly" class="form-control bg-transparent input100 bor" required>
+                                            <span class="focus-input100 "></span>
+
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input">
+
+                                            <label for="screen1" class="label"> ScreenShort 1<span> * </span> </label>
+                                            <input type="file" accept="image/*" name="screen1" id="screen1" class="form-control bg-transparent input100 bor" required>
+                                            <span class="focus-input100 "></span>
+
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input">
+
+                                            <label for="screen2" class="label"> ScreenShort 2<span> * </span> </label>
+                                            <input type="file" accept="image/*" name="screen2" id="screen2" class="form-control bg-transparent input100 bor" required>
+                                            <span class="focus-input100 "></span>
+
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input">
+
+                                            <label for="screen3" class="label"> ScreenShort 3<span> * </span> </label>
+                                            <input type="file" accept="image/*" name="screen3" id="screen3" class="form-control bg-transparent input100 bor" required>
+                                            <span class="focus-input100 "></span>
+
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input">
+
+                                            <label for="screen4" class="label">ScreenShort 4<span> * </span> </label>
+                                            <input type="file" accept="image/*" name="screen4" id="screen4" class="form-control bg-transparent input100 bor" required>
+                                            <span class="focus-input100 "></span>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="wrap-input100 validate-input">
+                                                    <label for="date" class="label">date<span> * </span> </label>
+                                                    <input id="datepicker" name="date" class="bg-transparent NoBorder" readonly/>
+
+
+                                                    <span class="focus-input100"></span>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="row mt-0 mt-md-4 mt-lg-4">
+                                                    <div class="col-6  mb-3">
+                                                        <div class="contact100-form-checkbox">
+                                                            <input class="input-checkbox100 show" id="ckb1" type="checkbox" name="show_name">
+                                                            <label class="label-checkbox100" for="ckb1">
+                                                                    Show 1
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-6 mb-3">
+                                                        <div class="contact100-form-checkbox">
+                                                            <input class="input-checkbox100 show" id="ckb2" type="checkbox" name="show_name">
+                                                            <label class="label-checkbox100" for="ckb2">
+                                                                    Show 2
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-6 mb-3">
+                                                        <div class="contact100-form-checkbox">
+                                                            <input class="input-checkbox100 show" id="ckb3" type="checkbox" name="show_name">
+                                                            <label class="label-checkbox100" for="ckb3">
+                                                                    Show 3
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-6 mb-3">
+                                                        <div class="contact100-form-checkbox">
+                                                            <input class="input-checkbox100 show" id="ckb4" type="checkbox" name="show_name">
+                                                            <label class="label-checkbox100" for="ckb4">
+                                                               Show 4
+                                                            </label>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                    <div id="shows" class=" mb-3 mt-3" style="color: red;">
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="error  mb-3 mt-3" style="color: red;">
+
+                                        </div>
+                                </div>
+                            </div>
+
+
+                        </div> -->
+                        <div class="tab firts-tab">
+                            <div class="row">
+                                <div class="col-md-6 d-md-block d-none" id="upload"></div>
+                                <div class="col-md-6">
+
+                                    <div class="wrap-input100 validate-input mt-4">
+                                        <label for="Release_Date" class="label"> Date<span> * </span> </label>
+                                        <input id="datepicker2" name="Release_Date" class="bg-transparent NoBorder mt-3" readonly />
+
+
+                                        <span class="focus-input100"></span>
+
+                                    </div>
+
+
+
+                                    <div class="mt-4">
+
+                                        <p>
+
+                                            <label for="textarea" class="label">Description <span> * </span> </label>
+                                            <textarea name="textarea" id="textarea" cols="30" class="input bg-transparent form-control " rows="5" required></textarea>
+
+
+                                        </p>
+
+
+                                    </div>
+
+                                    <div class="error mb-3 mt-3" style="color: red;">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div style="overflow:auto;" id="button_control" class="mb-4">
+                            <div class="float-sm-right float-none text-center">
+                                <button type="button" id="prevBtn" class="next abc" onclick="nextPrev(-1)">Previous</button>
+                                <button type="button" id="nextBtn" class="abc next" onclick="nextPrev(1)">Next</button>
+                            </div>
+                        </div>
+                        <!-- Circles which indicates the steps of the form: -->
+                        <div style="text-align:center;margin-top:40px;" class="d-none">
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                        </div>
+                        </form>
+
+                        <div class="loader">
+                            <div class="loading">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- <div class="tab-pane {{setting}} ml-5" id="setting" role="tabpanel" aria-labelledby="setting-tab">
+                            <form action="/update_setting" id="showtime" method="post">
+                                <input type="hidden" class="d-none" value="1" name="setting">
+                                <div class="wrap-input100 ">
+                                    <p>
+
+                                        <label for="show1" class=" label "> Show 1 <span> * </span> </label>
+                                        <input type="text" id="show1" name="show1" class="form-control input100 bg-transparent NoBorder"  required="required" placeholder="--:-- --" title="">
+                                        <span class="focus-input100"></span>
+                                    </p>
+
+
+                                </div>
+                                <div class="wrap-input100 ">
+                                    <p>
+
+                                        <label for="show2" class=" label "> Show 2 <span> * </span> </label>
+                                        <input type="text" name="show2" id="show2" class="form-control input100 bg-transparent NoBorder" required="required"  placeholder="--:-- --" title="">
+                                        <span class="focus-input100"></span>
+                                    </p>
+
+
+                                </div>
+                                <div class="wrap-input100 ">
+                                    <p>
+
+                                        <label for="show3" class=" label "> Show 3 <span> * </span> </label>
+                                        <input type="text" name="show3" id="show3" class="form-control input100 bg-transparent NoBorder" placeholder="--:-- --" required="required" title="">
+                                        <span class="focus-input100"></span>
+                                    </p>
+
+
+                                </div>
+                                <div class="wrap-input100 ">
+                                    <p>
+
+                                        <label for="show4" class=" label "> Show 4 <span> * </span> </label>
+                                        <input type="text" name="show4" id="show4" class="form-control input100 bg-transparent NoBorder" placeholder="--:-- --" required="required" title="">
+                                        <span class="focus-input100"></span>
+                                    </p>
+
+
+                                </div>
+                                <div class="container">
+                                    <li class="header-button text-center ml-2 animated bounceInUp">
+                                        <input type="submit" value="Update" class="abc" name="join us">
+                                    </li>
+                                </div>
+                            </form>
+
+                            <form action="/update_setting" id="social" method="post">
+                                <input type="hidden" class="d-none" value="4" name="setting">
+                                <div class="wrap-input100 ">
+                                    <p>
+
+                                        <label for="Facebook" class=" label "> Facebook <span> * </span> </label>
+                                        <input type="text" id="Facebook" name="Facebook" class="form-control input100 bg-transparent NoBorder"  required="required" placeholder="" title="">
+                                        <span class="focus-input100"></span>
+                                    </p>
+
+
+                                </div>
+                                <div class="wrap-input100 ">
+                                    <p>
+
+                                        <label for="twitter" class=" label ">twitter <span> * </span> </label>
+                                        <input type="text" name="twitter" id="twitter" class="form-control input100 bg-transparent NoBorder" required="required"  placeholder="--:-- --" title="">
+                                        <span class="focus-input100"></span>
+                                    </p>
+
+
+                                </div>
+                                <div class="wrap-input100 ">
+                                    <p>
+
+                                        <label for="instagram" class=" label "> instagram <span> * </span> </label>
+                                        <input type="text" name="instagram" id="instagram" class="form-control input100 bg-transparent NoBorder" placeholder="--:-- --"  required="required" title="">
+                                        <span class="focus-input100"></span>
+                                    </p>
+
+
+                                </div>
+
+                                <div class="container">
+                                    <li class="header-button text-center ml-2 animated bounceInUp">
+                                        <input type="submit" value="Update" class="abc" name="join us">
+                                    </li>
+                                </div>
+                            </form>
+                        </div> -->
+
+                    <div class="tab-pane" id="Exam" role="tabpanel" aria-labelledby="">
+                        <div class="row">
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/accounting.png" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Accounts">
+                                    <button class="zoom btn btn-link">Accounts</button>
+                                </form>
+
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/Agricultural Science.png" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Agricultural Science">
+                                    <button class="zoom btn btn-link"> Agricultural Science </button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/microscope.png" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Biology">
+                                    <button class="zoom btn btn-link">Biology</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/chemistry.png" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Chemistry">
+                                    <button class="zoom btn btn-link">Chemistry</button>
+                                </form>
+
+                            </div>
+
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/christian.png" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Christian Religious Knowledge">
+                                    <button class="zoom btn btn-link">Christian Religious Knowledge</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/Commerce.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Commerce">
+                                    <button class="zoom btn btn-link">Commerce</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/desktop.png" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Computer Studies">
+                                    <button class="zoom btn btn-link">
+
+                                        Computer Studies</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/scenario.png" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Current Affairs">
+                                    <button class="zoom btn btn-link">Current Affairs</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/Economics.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Economics">
+                                    <button class="zoom btn btn-link"> Economics</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/english.png" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="English Language">
+                                    <button class="zoom btn btn-link">English Language</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/Fine Art.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <input type="hidden" name="subject" value="Fine Arts">
+                                <button class="zoom btn btn-link">Fine Arts</button>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/French.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="French">
+                                    <button class="zoom btn btn-link">French</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/General Paper.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="General Paper">
+                                    <button class="zoom btn btn-link">General Paper</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/Geography.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Geography">
+                                    <button class="zoom btn btn-link"> Geography</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/Government.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Government">
+                                    <button class="zoom btn btn-link"> Government</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/hamsa.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Hausa">
+                                    <button class="zoom btn btn-link"> Hausa</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/History.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="History">
+                                    <button class="zoom btn btn-link"> History</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/cooking.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Home Economics">
+                                    <button class="zoom btn btn-link">Home Economics</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/Igbo.jpg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Igbo">
+                                    <button class="zoom btn btn-link"> Igbo</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/islam.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Islamic Religious Knowledge">
+                                    <button class="zoom btn btn-link">Islamic Religious Knowledge</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/Literature.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Literature In English">
+                                    <button class="zoom btn btn-link">Literature In English</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/calculator.png" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Mathematics">
+                                    <button class="zoom btn btn-link">Mathematics</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/Physics.png" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Physics">
+                                    <button class="zoom btn btn-link">Physics</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/Sweet Sixteen.svg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Sweet Sixteen">
+                                    <button class="zoom btn btn-link">Sweet Sixteen</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4 borders  Incenter">
+                                <img src="../static/images/icons/Yoruba.jpg" height="50px" width="50px" alt="">
+                                <br>
+                                <form action="/upload-Exam" method="post">
+                                    <input type="hidden" name="subject" value="Yoruba">
+                                    <button class="zoom btn btn-link">Yoruba</button>
+                                </form>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        </div>
+    </section>
+
+
+
+    <script src="../static/bootstrap/js/bootstrap.js"></script>
+    <script src="../static/js/popper.js"></script>
+    <!-- <script src="../static/js/admin.js"></script> -->
+    <script src="../static/js/admin.js"></script>
+    <script src="../static/js/aos.js"></script>
+    <script src="../static/js/countdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+
+    <script>
+        function trailer(link) {
+            alert(link)
+            trailer_link = document.getElementById("trailers");
+            trailer_link.setAttribute("src", " https://www.youtube.com/embed/" + link)
+        }
+
+        function ReadURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function store(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#store-pic')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#Admin')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+
+        var mail, notification, Subscriber, amount;
+        mail = document.getElementById("mail");
+        notification = document.getElementById("notification");
+        Subscriber = document.getElementById("Subscriber");
+        amount = document.getElementById("amount");
+
+        $(document).ready(function() {
+            fetch('/dashboardUpdate').then(function(response) {
+
+                response.json().then(function(data) {
+
+                    noti(data)
+
+                });
+            });
+
+
+
+        });
+
+        function noti(data) {
+
+            for (var bhn of data.Notify) {
+
+                mail.innerHTML = bhn.mail
+                notification.innerHTML = bhn.user
+                Subscriber.innerHTML = bhn.sub
+                amount.innerHTML = bhn.price
+
+                // alert(data.expirence)
+
+            }
+        }
+
+
+        $(document).ready(function() {
+            $("#update-form").validate();
+            $("#Email-form").validate();
+            $('#phone-form').validate();
+            $('#showtime').validate();
+            $('#social').validate();
+            AOS.init({
+                    duration: 3000,
+                }
+
+            );
+            setTimeout(function() {
+                $('.preloader').fadeToggle();
+
+            }, 1500);
+
+
+        });
+    </script>
+    <script>
+        function notiy() {
+            let mail
+
+            mail = document.getElementById("mail")
+            fetch('/dashboardUpdate').then(function(response) {
+
+                response.json().then(function(data) {
+
+                    noti(data)
+
+                });
+            });
+
+
+        }
+    </script>
+    <script>
+        function count() {
+            $('.counter-count').each(function() {
+                $(this).prop('Counter', 0).animate({
+
+                    Counter: $(this).text()
+
+                }, {
+                    duration: 5000,
+                    easing: 'swing',
+                    step: function(now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        }
+        $(function() {
+            $("#datepicker2").datepicker();
+        });
+    </script>
+
+    <script>
+        $(function() {
+
+            $("#datepicker2").datepicker();
+        });
+
+        $('#datepicker2').datepicker({
+            uiLibrary: 'bootstrap'
+        });
+    </script>
+    <script src="../static/js/llo.js"></script>
+</body>
+
+</html>

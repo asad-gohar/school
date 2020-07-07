@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolZeal.com - Nigerian Number One Educational Forum For All | Profile</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/animated.css">
+    <link rel="stylesheet" href="../static/fontawesome-free-5.12.1-web/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/aos.css">
+    <script src="../static/fontawesome-free-5.12.1-web/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../static/css/Admins.css">
+    <link rel="stylesheet" href="../static/css/store.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/login1.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/log_util.css">
+    <script src="../static/jquery-nice-select/js/jquery.js"></script>
+    <script src="../static/jquery-nice-select/js/jquery.nice-select.js"></script>
+    <link rel="stylesheet" href="../static/jquery-nice-select/css/nice-select.css">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="../static/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+        
+        [type="checkbox"]:checked,
+        [type="checkbox"]:not(:checked) {
+            position: absolute;
+            left: -9999px;
+        }
+        
+        [type="checkbox"]:checked+label,
+        [type="checkbox"]:not(:checked)+label {
+            position: relative;
+            padding-left: 28px;
+            cursor: pointer;
+            line-height: 20px;
+            display: inline-block;
+            color: #666;
+        }
+        
+        [type="checkbox"]:checked+label:before,
+        [type="checkbox"]:not(:checked)+label:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #ddd;
+            background: #fff;
+        }
+        
+        [type="checkbox"]:checked+label:after,
+        [type="checkbox"]:not(:checked)+label:after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: #31d7a9;
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+        
+        [type="checkbox"]:not(:checked)+label:after {
+            opacity: 0;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+        
+        [type="checkbox"]:checked+label:after {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <!-- <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div> -->
+
+
+    <section id="admin">
+
+
+        <div class="bd-example bd-example-tabs ">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-mattBlackLight fixed-top">
+                <button class="navbar-toggler sideMenuToggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand text-dark" href="#">Schoolzeal</a>
+
+            </nav>
+
+            <div class="wrapper d-flex row container-fluid">
+                <div class="d-md-none d-lg-block d-none">
+                    <div class="sideMenu bg-mattBlackLight" id="show">
+                        <div class="sidebar">
+                            <ul class=" navbar-nav nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <li class="nav-item bg-transparent">
+
+                                    <a class="nav-link  mb-1 p-3 image active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <img src="{{src}}" class="photo" alt="">
+                                                <span class="text">{{name}}</span>
+                                            </div>
+                                            <div class="col-6 d-none">
+
+
+                                            </div>
+                                        </div>
+
+
+
+                                    </a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a href="/">
+                                        <div class="nav-link px-2 " style="cursor: pointer;">
+
+                                            <i class="material-icons icon"> home </i><span class="text">Home
+
+                                            </span></div>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item ">
+                                    <a class="nav-link px-2 " href="/store">
+                                        <i class="material-icons icon ">
+                                            add_shopping_cart
+                                        </i>
+                                        <span class="text">Store</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item ">
+                                    <a class="nav-link px-2" href="/Library">
+                                        <i class="material-icons icon"> local_library </i><span class="text">Library
+                                        </span></a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link px-2" id="img-tab" data-toggle="pill" href="#Exam" role="tab" aria-controls="img" aria-selected="true">
+                                        <i class="material-icons icon"> content_paste </i><span class="text">Exam's
+                                        </span></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="/logout">
+                                        <div class="nav-link px-2 " style="cursor: pointer;">
+
+                                            <i class="material-icons icon"> https </i><span class="text">logout
+
+                                            </span></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <div style="cursor: pointer;" class="nav-link px-2 sideMenuToggler">
+                                        <i class="material-icons icon expandView ">
+                                            view_list
+                                        </i>
+                                        <span class="text">Resize</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="d-lg-none d-xl-none d-md-block d-block">
+                    <div class="wrapper d-flex">
+                        <div class="sideMenu bg-mattBlackLight" id="show">
+                            <div class="sidebar">
+                                <ul class=" navbar-nav nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <li class="nav-item bg-transparent sideMenuToggler">
+                                        <a class="nav-link  mb-1 p-3 image active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <img src="{{src}}" class="photo " alt="">
+                                                    <span class="text ">{{name}}</span>
+                                                </div>
+                                                <div class="col-6 d-none">
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </a>
+                                    </li>
+                                    <li class="nav-item sideMenuToggler">
+                                        <a href="/">
+                                            <div class="nav-link px-2 " style="cursor: pointer;">
+
+                                                <i class="material-icons icon"> home </i><span class="text">Home
+
+                                                </span></div>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item sideMenuToggler">
+                                        <a class="nav-link px-2 " href="/store">
+                                            <i class="material-icons icon ">
+                                                add_shopping_cart
+                                            </i>
+                                            <span class="text">Store</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item sideMenuToggler ">
+                                        <a class="nav-link px-2" id="img-tab" data-toggle="pill" href="#Exam" role="tab" aria-controls="img" aria-selected="true">
+                                            <i class="material-icons icon"> content_paste </i><span class="text">Exam's
+                                            </span></a>
+                                    </li>
+                                    <li class="nav-item sideMenuToggler ">
+                                        <a class="nav-link px-2" href="/Library">
+                                            <i class="material-icons icon"> local_library </i><span class="text">Library
+                                            </span></a>
+                                    </li>
+
+                                    <li class="nav-item sideMenuToggler">
+                                        <a href="/logout">
+                                            <div class="nav-link px-2 " style="cursor: pointer;">
+
+                                                <i class="material-icons icon"> https </i><span class="text">logout
+
+                                                </span></div>
+                                        </a>
+                                    </li>
+
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class=" mt-4 content  ">
+
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane  ml-5 active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <div class="pt-5">
+                                <div class="text-center">
+                                    <!-- <img src="https://img.icons8.com/metro/100/000000/user-male-circle.png" /> -->
+                                    <img id="blah" src="{{src}}" class="Profile-img img-fluid" alt="">
+                                </div>
+                                <div class="container-fluid">
+                                    <form action="/update" id="update-form" method="post" enctype="multipart/form-data" class="login100-form  pb-5">
+
+                                        <div class="">
+                                            <div class="wrap-input100 validate-input">
+                                                <p>
+
+                                                    <label for="fname" class=" label "> First Name <span> * </span>
+                                                    </label>
+                                                    <input class="input100 bg-transparent" id="fname" name="fname" type="text" value='{{user["first_name"]}}' required autocomplete="off">
+                                                    <span class="focus-input100"></span>
+
+                                                </p>
+
+
+                                            </div>
+                                            <div class="wrap-input100 validate-input">
+                                                <p>
+
+                                                    <label for="lname" class=" label "> Last Name <span> * </span>
+                                                    </label>
+                                                    <input class="input100 bg-transparent" id="lname" name="lname" type="text" value='{{user["last_name"]}}' required autocomplete="off">
+                                                    <span class="focus-input100"></span>
+
+                                                </p>
+
+
+                                            </div>
+
+                                            <div class="wrap-input100 validate-input">
+                                                <p>
+
+                                                    <label for="Email" class=" label "> Email <span> * </span> </label>
+                                                    <input class="input100 bg-transparent" id="Email" name="Email" type="email" value='{{user["email"]}}' readonly required autocomplete="off">
+                                                    <span class="focus-input100"></span>
+                                                    <div style="color: red;">{{error}}</div>
+                                                </p>
+
+
+                                            </div>
+                                            <div class="wrap-input100 validate-input">
+                                                <p>
+
+                                                    <label for="Phone" class=" label "> Phone <span> * </span> </label>
+                                                    <input class="input100 bg-transparent" id="Phone" name="Phone" type="text" value='{{user["phone"]}}' required autocomplete="off">
+                                                    <span class="focus-input100"></span>
+                                                    <div style="color: red;">{{error}}</div>
+                                                </p>
+
+
+                                            </div>
+                                            <div class="wrap-input100 validate-input">
+                                                <p>
+
+                                                    <label for="Account" class=" label "> Account Username <span> *
+                                                        </span> </label>
+                                                    <input class="input100 bg-transparent" id="Account" name="Account" type="text" value='{{user["account_username"]}}' required autocomplete="off">
+                                                    <span class="focus-input100"></span>
+
+                                                </p>
+
+
+                                            </div>
+
+                                            <div class="wrap-input100 validate-input" data-validate="Enter password">
+                                                <label for="password" class="label"> Password<span> * </span> </label>
+                                                <input class="input100" type="text" id="password" name="password" value='{{user["password"]}}' readonly required>
+                                                <span class="focus-input100"></span>
+
+                                            </div>
+                                            <div class="wrap-input100 validate-input" data-validate="Enter password">
+                                                <label for="confirm" class="label">Update Password<span> * </span>
+                                                </label>
+                                                <input class="input100" id="confirm" type="password" name="confirm" required>
+                                                <span class="focus-input100"></span>
+
+                                            </div>
+                                            <div class="wrap-input100">
+
+                                                <label for="ProfilPic" class="label"> PROFILE PIC<span> * </span>
+                                                </label>
+                                                <input type="file" accept="image/*" name="photo" id="ProfilPic" class="form-control bg-transparent input100" onchange="readURL(this)">
+                                                <span class=" focus-input100 "></span>
+
+                                            </div>
+
+                                            <div class="container">
+                                                <li class="header-button text-center ml-2 animated bounceInUp">
+                                                    <input type="submit" class="abc" value="Update" name="Update">
+                                                </li>
+                                            </div>
+
+
+                                        </div>
+                                    </form>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade ml-5 " id="Exam" role="tabpanel " aria-labelledby="Exam-tab ">
+                            <form action="/Exam" onsubmit="return fun()" name="papers" method="post">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <h4 class="mt-2 mb-2">Select Examination Body, School or Type:</h4>
+                                        <select name="exam_body" id="exam_body" class="form-control" onchange="show()" style="margin-bottom:0px;padding:0px 10px;font-size:16px;color:#222" required>
+                                            <option value="">Customized Examination</option>
+                                            <option value="jamb"> Joint Admissions and Matriculation Board (JAMB)
+                                            </option>
+                                            <option value="waec"> West African Examinations Council (WAEC)</option>
+                                            <option value="neco"> National Examinations Council (NECO)</option>
+                                            </option>
+
+
+                                        </select>
+                                        <input type="hidden" name="subject" value="1" class="d-none">
+                                        <input type="hidden" name="countdown" value="1" class="d-none">
+                                        <div id="Error" class="mt-2"></div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <h4 class="mt-2 mb-2">Select an Exam Mode:</h4>
+                                        <select name="exam_mode" id="exam_mode" onchange="time()" class="form-control" style="margin-bottom:0px;padding:0px 10px;font-size:16px;color:#222" required>
+                                            <option value="">Customized Time</option>
+                                            <option value="practice">Practice Mode (35 minutes)</option>
+                                            <option value="full_exam">Full Exam Mode (2 hours)</option>
+                                        </select>
+                                        <div id="Error2" class="mt-2"></div>
+                                    </div>
+
+                                </div>
+
+
+                                <div id="subjects">
+
+                                </div>
+                                <div id="massage" style="color: red;"></div>
+
+                                <button type="submit" class="btn  btn-success mb-3 float-right" onclick="check()">Start Exam</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+    </section>
+
+
+
+    <script src="../static/bootstrap/js/bootstrap.js "></script>
+    <script src="../static/js/popper.js "></script>
+    <script src="../static/js/userdashboard.js "></script>
+    <script src="../static/js/avc.js "></script>
+    <script src="../static/js/aos.js "></script>
+    <script src="../static/js/countdown.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js "></script>
+
+
+
+    <script>
+        function show() {
+            alert("shw")
+            v = document.getElementById("exam_body").value;
+
+            alert(v)
+
+            if (v != "") {
+
+                var subjects = document.getElementById("subjects")
+                document.getElementById("Error").innerHTML = '';
+
+                fetch('/subject/' + v).then(function(response) {
+
+                    response.json().then(function(data) {
+                        console.log(data)
+                        var optionHtml = "";
+
+                        for (var sub of data) {
+
+
+
+                            // alert(data.expirence)
+
+                            optionHtml += `
+                          
+                                    <p class="p-2" class="mt-3">
+                                        <input type="checkbox" name="Chaked" id="` + sub + `" value="` + sub + `">
+                                        <label for="` + sub + `">` + sub + `</label>
+                                    </p>`
+
+
+
+
+                            // '<input type="checkbox" id="' + sub + '" name="subject" class="d-inline"  value="' + sub + '"><label class="d-inline"  for="' + sub + '">' + sub + '</label><br>'
+
+
+                        }
+                        subjects.innerHTML = optionHtml;
+                        if (v == "jamb") {
+                            var y = subjects.getElementsByTagName('input');
+                            alert(y.length)
+                            for (var i = 0; i < y.length; i++) {
+                                var x = document.getElementsByTagName("input")[i].getAttribute("value");
+
+                                if (x == "English Language") {
+
+                                    break;
+                                }
+
+
+                            }
+                            alert(i)
+                            document.getElementsByTagName("input")[i].setAttribute("checked", "checked");
+                            document.getElementsByTagName("input")[i].setAttribute("disabled", "disabled");
+
+
+                        }
+
+
+
+                    });
+                });
+            } else {
+                var Err = document.getElementById("Error")
+                Err.innerHTML = ' <h6 style="color:red"> * please select Exam Type </h6>';
+                document.getElementById("subjects").innerHTML = "";
+
+
+
+            }
+
+            // change the value of show time on language change
+
+        }
+
+        function time() {
+            var b = document.getElementById("exam_mode").value;
+
+            if (b == "") {
+
+                var subjects = document.getElementById("subjects")
+                document.getElementById("Error2").innerHTML = ' <h6 style="color:red"> * please select Exam Mode </h6>';
+            } else {
+
+                document.getElementById("Error2").innerHTML = '';
+
+
+
+            }
+        }
+
+
+        function check() {
+            var c = 0
+            var paper = document.getElementById("exam_body").value;
+            var Mode = document.getElementById("exam_mode").value;
+            if (paper == "") {
+                var Err = document.getElementById("Error")
+                Err.innerHTML = ' <h6 style="color:red"> * please select Exam Type </h6>';
+                return false;
+            }
+            if (Mode == "") {
+                document.getElementById("Error2").innerHTML = ' <h6 style="color:red"> * please select Exam Mode </h6>';
+                return false;
+            }
+
+
+            // If a field is empty...
+
+
+        }
+
+        function fun() {
+            var c = 0
+
+            var paper = document.getElementById("exam_body").value;
+            var Mode = document.getElementById("exam_mode").value;
+            alert(paper)
+            var chec = document.papers.Chaked;
+
+            for (let index = 0; index < chec.length; index++) {
+                if (chec[index].checked == true) {
+                    c = c + 1
+
+
+
+                }
+
+
+            }
+            if (paper == "jamb") {
+                if (c == 4) {
+                    return true;
+
+                } else {
+                    document.getElementById("massage").innerHTML = "* please Select 4 subject";
+                    return false;
+                }
+
+            } else {
+                if (c == 8) {
+                    return true;
+
+                } else {
+                    document.getElementById("massage").innerHTML = "* please Select 8 subject";
+                    return false;
+                }
+
+            }
+
+
+
+
+
+
+            // document.getElementById("massage").innerHTML = "* please Select At least one";
+            // // return false;
+
+            // if (paper == "jamb") {
+            //             if (c == 4) {
+            //                 document.getElementById("massage").innerHTML = "";
+            //                 return true;
+            //             } else {
+            //                 document.getElementById("massage").innerHTML = "* please Select 4 Subject";
+            //                 return false;
+            //             }
+
+
+            //         } else {
+            //             if (c == 8) {
+            //                 document.getElementById("massage").innerHTML = "";
+            //                 return true;
+            //             } else {
+            //                 document.getElementById("massage").innerHTML = "* please Select 8 Subject";
+            //                 return false;
+            //             }
+            //         }
+
+
+
+        }
+
+        AOS.init({
+                duration: 3000,
+            }
+
+        );
+        setTimeout(function() {
+            $('.preloader').fadeToggle();
+
+        }, 1500);
+
+        $(document).ready(function() {
+            $("#update-form ").validate();
+        });
+    </script>
+
+    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap'
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SchoolZeal.com - Nigerian Number One Educational Forum For All | Exam</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/allf500.css">
+    <link rel="stylesheet" href="../static/css/animated.css">
+    <link rel="stylesheet" href="../static/fontawesome-free-5.12.1-web/css/all.css">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/news.css">
+    <link rel="stylesheet" href="../static/css/aos.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/login1.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/log_util.css"> -->
+    <link rel="stylesheet" href="../static/css/store.css">
+    <script src="../static/fontawesome-free-5.12.1-web/js/all.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <style>
+        .photo {
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            float: left;
+            z-index: 5;
+            margin-right: 11px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            box-shadow: 0 16px 38px -12px rgba(0, 0, 0, .56), 0 4px 25px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+            background-color: transparent !important;
+        }
+        
+        .swappy-radios label {
+            display: block;
+            position: relative;
+            padding-left: 4rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: #555;
+        }
+        
+        .swappy-radios label:hover input~.radio {
+            opacity: 0.8;
+        }
+        
+        .swappy-radios input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        
+        .swappy-radios input:checked~span {
+            color: #0bae72;
+            -webkit-transition: color .5s;
+            transition: color .5s;
+        }
+        
+        .swappy-radios input:checked~.radio {
+            background-color: #0ac07d;
+            opacity: 1 !important;
+        }
+        
+        .swappy-radios input:checked~.radio::after {
+            opacity: 1;
+        }
+        
+        .swappy-radios .radio {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 2.5rem;
+            width: 2.5rem;
+            background: #c9ded6;
+            border-radius: 50%;
+        }
+        
+        .swappy-radios .radio::after {
+            display: block;
+            content: '';
+            position: absolute;
+            opacity: 0;
+            top: .5rem;
+            left: .5rem;
+            width: 1.5rem;
+            /* height: 1.5rem; */
+            border-radius: 50%;
+            background: #fff;
+        }
+        /* #regForm {
+            background-color: #ffffff;
+            margin: 100px auto;
+            font-family: Raleway;
+            padding: 40px;
+            width: 70%;
+            min-width: 300px;
+        } */
+        
+        h1 {
+            text-align: center;
+        }
+        
+        input {
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+        }
+        /* Mark input boxes that gets an error on validation: */
+        
+        input.invalid {
+            background-color: #ffdddd;
+        }
+        /* Hide all steps by default: */
+        
+        .tab {
+            display: none;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 17px;
+            font-family: Raleway;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        #prevBtn {
+            background-color: #bbbbbb;
+        }
+        /* Make circles that indicate the steps of the form: */
+        
+        .step {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+        }
+        
+        .step.active {
+            opacity: 1;
+        }
+        /* Mark the steps that are finished and valid: */
+        
+        .step.finish {
+            background-color: #4CAF50;
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+
+
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="#"><img src="../static/images/Schoolzeal.png" class="img-fluid" height="200px" width="150px" alt="" srcset=""></a>
+        <ul class="navbar-nav ml-auto">
+            <div class="row m-2">
+                <div class="col-4 mt-1">
+                    <p>
+                        <a class="btn" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
+
+                    </p>
+
+                </div>
+                <div class="col-8 ">
+                    <li class="nav-item {{Logout}}">
+                        <a class="nav-link btn btn-outline-success " href="/login">login </a>
+                    </li>
+                    <li class="nav-item  {{Login}}">
+                        <a href="/profile">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="{{src}}" class="photo" title="{{name}}" alt="">
+
+                                </div>
+
+                            </div>
+
+
+
+                        </a>
+                    </li>
+
+                </div>
+            </div>
+
+
+
+        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link " data-aos="zoom-in" data-aos-duration="3000" style="font-size: 20px;">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item " data-aos="zoom-in" data-aos-duration="3000">
+                    <a href="/profile" class="nav-link " style="font-size: 20px;">
+                        Store
+                    </a>
+
+                </li>
+                <li class="nav-item " data-aos="zoom-in" data-aos-duration="3000">
+                    <a href="/latest_news" class="nav-link " style=" font-size: 20px;"> Latest News
+                    </a>
+
+                </li>
+
+                <li class="nav-item active " data-aos="zoom-in" data-aos-duration="3000">
+                    <a href="/profile" class="nav-link " style="font-size: 20px;">Exam's
+                    </a>
+
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <form method="POST" action="/search" accept-charset="UTF-8">
+                <div class="input-group">
+                    <input class="form-control" placeholder="Search Post here..." name="search_string" type="text">
+                    <span class="input-group-btn">
+                <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+            </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <section>
+        <div class="container">
+            <form id="regForm" name="radio" action="/Exam" method="Post">
+
+                <input type="text" value="{{exam_body}}" id="exam_body" class="d-none" name="exam_body">
+                <input type="text" value="{{time}}" id="time" class="d-none" name="exam_mode">
+
+
+                <div class="container" style="background-color: white;">
+
+
+                    {% for l in list %}
+                    <div>
+                        <input type="checkbox" name="Chaked" value="{{l}}" class="d-none" checked>
+                    </div>
+                    {% endfor %}
+                    <p id="demo"></p>
+
+                    <h4 class="pt-3 text-center">{{exam}} Exam</h4>
+                    <!-- One "tab" for each step in the form: -->
+                    {% for q in question%}
+                    <div class="tab">
+                        <div>
+                            <p>
+
+                                <h3 class="mt-4">Question</h3>
+                                <textarea class="form-control" name="Question" id="" cols="30" readonly>{{q.question}}</textarea>
+                                <div class="subject_id d-none">{{q.id}}</div>
+
+                            </p>
+
+
+                        </div>
+
+
+
+                        <div class="swappy-radios" role="radiogroup" aria-labelledby="swappy-radios-label">
+                            <h3 id="swappy-radios-label">Select an option</h3>
+                            <label>
+                                <input type="radio" name="options" value="{{q.A}}" />
+                                <span class="radio"></span>
+                                <p>{{q.A}}</p>
+                            </label>
+                            <label>
+                                <input type="radio" name="options" value="{{q.B}}" />
+                                <span class="radio"></span>
+                                <p>{{q.B}}</p>
+                            </label>
+                            <label>
+                                <input type="radio" name="options" value="{{q.C}}" />
+                                <span class="radio"></span>
+                                <p>{{q.C}}</p>
+                            </label>
+                            <label>
+                                <input type="radio" name="options" value="{{q.D}}" />
+                                <span class="radio"></span>
+                                <p>{{q.D}}</p>
+                            </label>
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                    {% endfor %}
+                    <div id="radioHide" class="d-none " style="visibility: {{v}};">
+                        <h2>Select the Next subject</h2>
+                        <div class="row">
+
+                            {% for l in list %}
+                            <div class="col-md-3">
+                                <div class="swappy-radios" role="radiogroup" aria-labelledby="swappy-radios-label">
+                                    <label>
+                                        <input type="radio" name="subject" class="radioCheck" value="{{l}}" />
+                                        <span class="radio"></span>
+                                        <span>{{l}}</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+
+
+                    <div style="overflow:auto;">
+                        <div style="float:right;">
+                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                        </div>
+                    </div>
+                    <!-- Circles which indicates the steps of the form: -->
+                    <div style="text-align:center;margin-top:40px;">
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+
+        <div>
+            <form action="/quit">
+                <div class="text-center mt-1 mb-3">
+                    <button type="submit" id="quit" class="btn btn-outline-danger">
+                        Quit Exam
+                        </button>
+                </div>
+
+            </form>
+        </div>
+
+
+
+
+    </section>
+
+
+
+    <script>
+        var quizTime = document.getElementById("time").value;
+        alert(quizTime);
+        var d = new Date();
+        var countDownDate = 0;
+        if (quizTime == "practice") {
+            countDownDate = d.setMinutes(d.getMinutes() + 1);
+
+            alert(countDownDate)
+
+        } else {
+            countDownDate = new d.setHours(d.getHours() + 2);
+
+        }
+        // Set the date we're counting down to
+
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = hours + "h " +
+                minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("quit").click()
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+    <script src="../static/bootstrap/js/bootstrap.js "></script>
+    <script src="../static/js/popper.js "></script>
+    <!-- <script src="../static/js/admin.js "></script> -->
+    <script src="../static/js/admin.js "></script>
+    <script src="../static/js/aos.js "></script>
+    <script src="../static/js/countdown.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js "></script>
+
+    <script>
+        document.getElementsByClassName("radioCheck")[0].setAttribute("checked", "checked")
+    </script>
+
+
+    <script>
+        let currentValue = 1;
+        const timeout = 0.75;
+        const radios = document.querySelectorAll('.swappy-radios input');
+        const fakeRadios = document.querySelectorAll('.swappy-radios .radio');
+
+        //This next bit kinda sucks and could be improved.
+        //For simplicity, I'm assuming that the distance between the first and second radios is indicative of the distance between all radios. This will fail if one of the options goes onto two lines.
+        //I should really move each radio independantly depending on its own distance to its neighbour. Oh well ¯\_(ツ)_/¯
+        //TODO ^^^
+        const firstRadioY = document.querySelector('.swappy-radios label:nth-of-type(1) .radio').getBoundingClientRect().y;
+        const secondRadioY = document.querySelector('.swappy-radios label:nth-of-type(2) .radio').getBoundingClientRect().y;
+        const indicitiveDistance = secondRadioY - firstRadioY;
+        //End suckyness :D
+
+        //Apply CSS delays in JS, so that if JS doesn't load, it doesn't delay selected radio colour change
+        //I'm applying background style delay here so that it doesn't appear slow if JS is disabled/broken
+        fakeRadios.forEach(function(radio) {
+            radio.style.cssText = `transition: background 0s ${timeout}s;`;
+        });
+        //Have to do this bit the long way (i.e. with a <style> element) becuase you can't do inline pseudo element syles
+        const css = `.radio::after {transition: opacity 0s ${timeout}s;}`
+        const head = document.head;
+        const style = document.createElement('style');
+        style.type = 'text/css';
+        style.appendChild(document.createTextNode(css));
+        head.appendChild(style);
+        //End no-js animation fallbacks.
+
+        radios.forEach(function(radio, i) {
+            //Add an attr to make finding and styling the correct element a lot easier
+            radio.parentElement.setAttribute('data-index', i + 1);
+
+            //The meat: set up the change listener!
+            radio.addEventListener('change', function() {
+                //Stop weirdness of incomplete animation occuring. disable radios until complete.
+                temporarilyDisable();
+
+                //remove old style tag
+                removeStyles();
+                const nextValue = this.parentElement.dataset.index;
+
+                const oldRadio = document.querySelector(`[data-index="${currentValue}"] .radio`);
+                const newRadio = this.nextElementSibling;
+                const oldRect = oldRadio.getBoundingClientRect();
+                const newRect = newRadio.getBoundingClientRect();
+
+                //Pixel distance between previous and newly-selected radios
+                const yDiff = Math.abs(oldRect.y - newRect.y);
+
+                //Direction. Is the new option higher or lower than the old option?
+                const dirDown = oldRect.y - newRect.y > 0 ? true : false;
+
+                //Figure out which unselected radios actually need to move 
+                //(we don't necessarily want to move them all)
+                const othersToMove = [];
+                const lowEnd = Math.min(currentValue, nextValue);
+                const highEnd = Math.max(currentValue, nextValue);
+
+                const inBetweenies = range(lowEnd, highEnd, dirDown);
+                let othersCss = '';
+                inBetweenies.map(option => {
+                    //If there's more than one, add a subtle stagger effect
+                    const staggerDelay = inBetweenies.length > 1 ? 0.1 / inBetweenies.length * option : 0;
+                    othersCss += `
+        [data-index="${option}"] .radio {
+          animation: moveOthers ${timeout - staggerDelay}s ${staggerDelay}s;
+        }
+      `;
+                });
+
+                const css = `
+      ${othersCss}
+      [data-index="${currentValue}"] .radio { 
+        animation: moveIt ${timeout}s; 
+      }
+      @keyframes moveIt {
+        0% { transform: translateX(0); }
+        33% { transform: translateX(-3rem) translateY(0); }
+        66% { transform: translateX(-3rem) translateY(${dirDown ? '-' : ''}${yDiff}px); }
+        100% { transform: translateX(0) translateY(${dirDown ? '-' : ''}${yDiff}px); }
+      }
+      @keyframes moveOthers {
+        0% { transform: translateY(0); }
+        33% { transform: translateY(0); }
+        66% { transform: translateY(${dirDown ? '' : '-'}${indicitiveDistance}px); }
+        100% { transform: translateY(${dirDown ? '' : '-'}${indicitiveDistance}px); }
+      }
+  `;
+                appendStyles(css);
+                currentValue = nextValue;
+            });
+        });
+
+        function appendStyles(css) {
+            const head = document.head;
+            const style = document.createElement('style');
+            style.type = 'text/css';
+            style.id = 'swappy-radio-styles';
+            style.appendChild(document.createTextNode(css));
+            head.appendChild(style);
+        }
+
+        function removeStyles() {
+            const node = document.getElementById('swappy-radio-styles');
+            if (node && node.parentNode) {
+                node.parentNode.removeChild(node);
+            }
+        }
+
+        function range(start, end, dirDown) {
+            let extra = 1;
+            if (dirDown) {
+                extra = 0;
+            }
+            return [...Array(end - start).keys()].map(v => start + v + extra);
+        }
+
+        function temporarilyDisable() {
+            radios.forEach((item) => {
+                item.setAttribute('disabled', true);
+                setTimeout(() => {
+                    item.removeAttribute('disabled');
+                }, timeout * 1000);
+            });
+        }
+    </script>
+    <script>
+        AOS.init({
+                duration: 3000,
+            }
+
+        );
+        setTimeout(function() {
+            $('.preloader').fadeToggle();
+
+        }, 1500);
+    </script>
+
+    <script>
+        var currentTab = 0;
+        var i = 0; // Current tab is set to be the first tab (0)
+        showTab(currentTab); // Display the current tab
+        var inde = 0;
+
+        function showTab(n) {
+            // This function will display the specified tab of the form...
+            var x = document.getElementsByClassName("tab");
+            x[n].style.display = "block";
+            //... and fix the Previous/Next buttons:
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
+            if (n == (x.length - 1)) {
+                document.getElementById("radioHide").removeAttribute("class");
+                document.getElementById("nextBtn").innerHTML = "Submit";
+            } else {
+                document.getElementById("nextBtn").innerHTML = "Next";
+            }
+            //... and run a function that will display the correct step indicator:
+            fixStepIndicator(n)
+        }
+
+        function nextPrev(n) {
+            if (n == 1) {
+                document.getElementById("prevBtn").removeAttribute("disabled");
+
+                document.getElementById("prevBtn").style.cursor = "pointer";
+
+                alert("y")
+                var optionvalue = ""
+                alert(optionvalue)
+                var subject_id = document.getElementsByClassName("subject_id")[currentTab].innerHTML;
+                alert(subject_id)
+                var x = document.getElementsByClassName("tab");
+                var chec = document.radio.options;
+                alert(chec.length)
+
+                for (index = i; index < chec.length; index++) {
+                    console.log(chec[index])
+
+
+                    if (chec[index].checked == true) {
+                        alert(index)
+                        i = index + 1
+                        inde = i
+                        alert("yes")
+                        optionvalue = chec[index].value;
+
+
+
+
+
+                    }
+
+
+                }
+                var answer = optionvalue;
+                var subject_id = subject_id;
+
+                alert(`answer:${answer} subject_id:${subject_id}`)
+
+                $.ajax({
+                    url: '/Examevaluation',
+                    type: "POST",
+                    data: {
+                        'answer': answer,
+                        'subject_id': subject_id
+                    },
+                    success: function(respones) {
+                        console.log(respones)
+                    },
+                    error: function(error) {
+                        console.log(error)
+                    }
+                });
+
+
+
+
+
+            }
+            if (n == -1) {
+                alert(inde)
+                i = i - inde
+                document.getElementById("prevBtn").setAttribute("disabled", "disabled");
+                document.getElementById("prevBtn").style.cursor = "not-allowed";
+                alert("y")
+                var optionvalue = ""
+                alert(optionvalue)
+                var subject_id = document.getElementsByClassName("subject_id")[currentTab].innerHTML;
+                alert(subject_id)
+                var x = document.getElementsByClassName("tab");
+                var chec = document.radio.options;
+                alert(chec.length)
+
+                for (index = i; index < chec.length; index++) {
+                    console.log(chec[index])
+
+
+                    if (chec[index].checked == true) {
+                        alert(index)
+                        i = index + 1
+                        inde = i
+                        alert("yes")
+                        optionvalue = chec[index].value;
+
+
+
+
+
+                    }
+
+
+                }
+                var answer = optionvalue;
+                var subject_id = subject_id;
+
+                alert(`answer:${answer} subject_id:${subject_id}`)
+
+                $.ajax({
+                    url: '/ evaluation',
+                    type: "POST",
+                    data: {
+                        'answer': answer,
+                        'subject_id': subject_id
+                    },
+                    success: function(respones) {
+                        console.log(respones)
+                    },
+                    error: function(error) {
+                        console.log(error)
+                    }
+                });
+
+            }
+
+            // This function will figure out which tab to display
+            var x = document.getElementsByClassName("tab");
+            // Exit the function if any field in the current tab is invalid:
+            if (n == 1 && !validateForm()) return false;
+            // Hide the current tab:
+            x[currentTab].style.display = "none";
+            // Increase or decrease the current tab by 1:
+            currentTab = currentTab + n;
+            // if you have reached the end of the form...
+            if (currentTab >= x.length) {
+                // ... the form gets submitted:
+                document.getElementById("regForm").submit();
+                return false;
+            }
+            // Otherwise, display the correct tab:
+            showTab(currentTab);
+        }
+
+        function validateForm() {
+            // This function deals with validation of the form field
+
+            var x, y, i, valid = true;
+            x = document.getElementsByClassName("tab");
+            y = x[currentTab].getElementsByTagName("input");
+            // A loop that checks every input field in the current tab:
+            for (i = 0; i < y.length; i++) {
+                // If a field is empty...
+                if (y[i].value == "") {
+                    // add an "invalid" class to the field:
+                    y[i].className += " invalid";
+                    // and set the current valid status to false
+                    valid = true;
+                }
+            }
+            // If the valid status is true, mark the step as finished and valid:
+            if (valid) {
+                document.getElementsByClassName("step")[currentTab].className += " finish";
+            }
+            return valid; // return the valid status
+        }
+
+        function fixStepIndicator(n) {
+            // This function removes the "active" class of all steps...
+            var i, x = document.getElementsByClassName("step");
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+            }
+            //... and adds the "active" class on the current step:
+            x[n].className += " active";
+        }
+    </script>
+
+
+    <script>
+    </script>
+
+</body>
+
+</html>
