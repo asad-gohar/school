@@ -26,7 +26,7 @@ Pillow==7.0.0
 pip-update==0.4.1
 pip-upgrade-outdated==1.5
 pycparser==2.19
-PyJWT==1.7.1
+PyJWT==2.4.0
 python-dateutil==2.8.1
 python-editor==1.0.4
 python-engineio==3.13.0
